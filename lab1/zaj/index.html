@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travelly</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <p class="logo">Travelly</p>
+    <ul class="menu">
+      <li><a class="menu-item" href="#">About</a></li>
+      <li><a class="menu-item" href="#">Home</a></li>
+      <li><a class="menu-item" href="#">About</a></li>
+      <li><a class="menu-item" href="#">Reviews</a></li>
+      <li><a class="menu-item" href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <section id="hero-section" class="hero-section">
+    <div class="hero-image grid">
+      <div class="welcome-text">
+        <h3 class="dark">
+          Your adventure starts now
+        </h3>
+        <p class="dark">
+          Start discovering the world around you today
+        </p> 
+      </div>
+  
+      <div class="search-container">
+        <input placeholder="What's your dream destination?">
+        <button class="primary-green">Browse</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="destinations-section" class="grid destinations-section" mode="vertical">
+    <h3 class="orange destinations-text">
+      Our most popular destinations
+    </h3>
+
+    <article class="card" mode="vertical" type="destination">
+      <div class="destination-card-header" type="destination" mode="vertical">
+        <div class="destination-image-container" mode="vertical">
+          <img class="destination-image" src="assets/Athens.jpg" alt="Ateny">
+        </div>
+        <div class="destination-content" mode="vertical">
+          <div class="destination-card-content">
+            <p class="green bold">Ateny i Grecja</p>
+            <p>11.09</p>
+            <p class="dark">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, commodi? 
+              Amet esse, ratione quae eligendi animi reiciendis, non nisi distinctio iste odio, 
+              aliquam fuga voluptas ad recusandae nesciunt eos quia.
+            </p>
+          </div>
+          <div class="destination-card-footer">
+            <p class="orange bold">650$/person</p>
+            <button class="primary-orange" type="submit">Book now</button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</body>
+</html>
