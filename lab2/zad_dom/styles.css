@@ -1,0 +1,69 @@
+body{
+    text-align: center;
+    margin: auto;
+}
+
+.header {
+    margin: 1rem;
+    padding: 1rem;
+    display: inline-block;
+    box-shadow: 0 5px 12px 0 #0f0f0f9f;
+}
+
+.asdf{
+    margin: 1rem;
+}
+
+.content{
+    margin: auto;
+    max-width: 90vw;
+}
+
+.tasks{
+    display: block;
+    margin: 1rem;
+}
+
+#not-urgent button{
+    background-color: lightgreen;
+}
+button {
+    border: 0px;
+    margin: .5rem;
+    padding: .25rem;
+}
+button:hover{
+    background-color: gainsboro;
+    transition: .25s;
+}
+
+.task{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 5px 12px 0 #0f0f0f9f;
+    border-radius: 0.125rem;
+    transition: all .3s;
+}
+
+#not-urgent .task{
+    background-color: lightgreen;
+}
+
+#urgent .task{
+    background-color: gold;
+}
+
+#critical{
+    background-color: crimson;
+    color: white;
+}
+
+#critical .task{
+    background-color: crimson;
+    color: white;
+}
+.task:hover{
+    transform: scale(1.1);
+}
