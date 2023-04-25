@@ -89,10 +89,41 @@ const addHandlers = () => {
 }
 
 const handleDeleteTask = (task, list) => {
+    const modal = $("<div>", {
+        class: "modal"
+      }).appendTo("body");
+      
+    const modalContent = $("<div>", {
+        class: "modal-content"
+      }).appendTo(modal);
+
+    $("<p>", {
+        text: "Are you sure you want to delete this items?"
+    }).appendTo(modalContent);
+      
+    const confirmButton = $("<button>", {
+        text: "Yes",
+    }).appendTo(modalContent);
+      
+    const cancelButton = $("<button>", {
+        text: "Cancel",
+      }).appendTo(modalContent);
+      
+    confirmButton.off("click").on("click", () => {
+        removeAndArchiveTask(task, list)
+        modal.remove();
+      });
+      
+    cancelButton.off("click").on("click", () => {
+        modal.remove();
+    });
+      
+    modal.show();
+}
+
+const removeAndArchiveTask = (task, list) => {
     const index = list.indexOf(task);
-    if(index === -1)
-        return;
-    
+        
     list.splice(index, 1);
     lastDeletedTask = 
     {
