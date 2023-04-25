@@ -23,6 +23,7 @@ const createTaskElement = (task, list) => {
         dateP.textContent = "Done! on " + task.finishedDate;
   
         div.appendChild(dateP);
+        div.classList.add("done");
     }
   
     div.appendChild(p);
@@ -45,7 +46,6 @@ const createTaskElement = (task, list) => {
     btnDiv.append(finishButton, deleteButton)
 
     div.appendChild(btnDiv);
-
     return div;
 }
   
@@ -57,9 +57,8 @@ const handleFinishButtonClick = (task) => {
     renderTasks();
 }
 
-const handleAddTask = (input ,list) => {
+const handleAddTask = (input, list) => {
     const taskName = input.value;
-
     if(!taskName){
         alert("Task cannot be empty!");
         return;
@@ -79,7 +78,7 @@ const addHandlers = () => {
     const notUrgentInput = document.getElementById("not-urgent-input");
     const notUrgentAddButton = document.getElementById("not-urgent-add-button");
     notUrgentAddButton.onclick = () => handleAddTask(notUrgentInput, notUrgentList);
-    
+
     const urgentInput = document.getElementById("urgent-input");
     const urgentAddButton = document.getElementById("urgent-add-button");
     urgentAddButton.onclick = () => handleAddTask(urgentInput, urgentList);

@@ -10,8 +10,10 @@ body{
     box-shadow: 0 5px 12px 0 #0f0f0f9f;
 }
 
-.asdf{
+.head{
     margin: 1rem;
+    padding: .75rem;
+    box-shadow: 0 5px 12px 0 #0f0f0f9f;
 }
 
 .content{
@@ -24,13 +26,14 @@ body{
     margin: 1rem;
 }
 
-#not-urgent button{
-    background-color: lightgreen;
-}
 button {
     border: 0px;
-    margin: .5rem;
-    padding: .25rem;
+    margin: 1rem;
+    padding: .5rem;
+}
+.task button {
+    padding: .25rem;    
+    
 }
 button:hover{
     background-color: gainsboro;
@@ -55,7 +58,19 @@ button:hover{
     background-color: gold;
 }
 
+#urgent .head{
+    background-color: gold;
+}
+
+#not-urgent .head{
+    background-color: lightgreen;
+}
+
 #critical{
+    color: white;
+}
+
+#critical .head{
     background-color: crimson;
     color: white;
 }
@@ -66,4 +81,10 @@ button:hover{
 }
 .task:hover{
     transform: scale(1.1);
+}
+#critical .done{
+    color: lightgrey;
+}
+.done{
+    color: darkgray;
 }
