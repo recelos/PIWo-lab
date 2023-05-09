@@ -1,14 +1,14 @@
 import { useState } from "react"
 
 export default function Add(props) {
-  let [city, setCity] = useState("");
-  let [price, setPrice] = useState("");
-  let [street, setStreet] = useState("");
-  let [description, setDescription] = useState("");
-  let [bedrooms, setBedrooms] = useState("");
+  const [city, setCity] = useState("");
+  const [price, setPrice] = useState("");
+  const [street, setStreet] = useState("");
+  const [description, setDescription] = useState("");
+  const [bedrooms, setBedrooms] = useState("");
 
 
-  let handleSubmit = (e) =>{
+  const handleSubmit = (e) =>{
     e.preventDefault();
     if(isNaN(price) || city ==="" || street==="" || description==="" || isNaN(bedrooms)){
       alert("Wrong data!")

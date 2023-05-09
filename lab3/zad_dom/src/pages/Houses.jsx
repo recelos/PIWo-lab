@@ -2,21 +2,21 @@ import { useState } from "react";
 import HouseCard from "../components/HouseCard";
 
 export default function Houses(props){
-  let houses = props.houses;
+  const houses = props.houses;
 
-  let [cityQuery, setCityQuery] = useState("");
-  let [bedroomsQuery, setBedroomsQuery] = useState("");
-  let [descritpionQuery, setDescritpionQuery] = useState("");
-  let [sortAscending, setSortAscenting] = useState(false);
+  const [cityQuery, setCityQuery] = useState("");
+  const [bedroomsQuery, setBedroomsQuery] = useState("");
+  const [descritpionQuery, setDescritpionQuery] = useState("");
+  const [sortAscending, setSortAscenting] = useState(false);
 
-  let filterByBedrooms = (i) =>{
+  const filterByBedrooms = (i) =>{
     if(bedroomsQuery !== ""){
       return i.bedrooms === parseInt(bedroomsQuery);
     }
     return true;
   }
 
-  let sortByPrice = (a, b) =>{
+  const sortByPrice = (a, b) =>{
     if(sortAscending){
       return (a.price > b.price) ? 1 : -1;
     }
@@ -41,7 +41,6 @@ export default function Houses(props){
         </div>
       </div>
       <button onClick={ () => setSortAscenting(!sortAscending) }>Sort by price</button>
-
       {
         houses
         .sort(sortByPrice)

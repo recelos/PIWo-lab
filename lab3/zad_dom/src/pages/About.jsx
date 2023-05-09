@@ -1,6 +1,6 @@
 import AboutCart from "../components/AboutCard";
 
-let cards = [
+const cards = [
   {
     title: "Expertise",
     content: "Our real estate company has a team of highly skilled professionals who possess extensive knowledge of the real estate market, ensuring that our clients receive the best possible advice and guidance."

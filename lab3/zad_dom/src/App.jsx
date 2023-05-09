@@ -8,10 +8,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function App() {
-  let [houses, setHouses] = useState(realEstates);
+  const [houses, setHouses] = useState(realEstates);
 
-  let addHouse = (city, price, street, description, bedrooms) =>{
-    let newHouse = {
+  const addHouse = (city, price, street, description, bedrooms) =>{
+    const newHouse = {
       city: city,
       price: parseInt(price),
       street: street,
