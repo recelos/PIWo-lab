@@ -3,6 +3,7 @@ import About from './pages/About';
 import Main from './pages/Main';
 import Houses from './pages/Houses';
 import Add from './pages/Add';
+import { UserProvider } from './providers/UserProvider'
 import axios from 'axios';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -30,17 +31,19 @@ export default function App() {
     setHouses(oldArray => [...oldArray, newHouse]);
   }
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={ <Main /> } />
-          <Route path="/about" element={ <About /> } />
-          <Route path="/houses" element={ <Houses houses = { houses }/> } />
-          <Route path="/add" element={ <Add addHouse = { addHouse } /> } />
-        </Routes>
-      </BrowserRouter>
-    </div>
+  return(
+    <UserProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={ <Main /> } />
+            <Route path="/about" element={ <About /> } />
+            <Route path="/houses" element={ <Houses houses = { houses }/> } />
+            <Route path="/add" element={ <Add addHouse = { addHouse } /> } />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </UserProvider>
   );
 }

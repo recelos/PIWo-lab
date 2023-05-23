@@ -4,20 +4,23 @@
     "street": "ul. Grota-Roweckiego 7",
     "description": "Very nice house",
     "bedrooms": 4,
-    "price": 400000
+    "price": 400000,
+    "email": "adam@email.com"
   },
   {
     "city": "Wroclaw",
     "street": "ul. 11 Listopada 4",
     "description": "Damn, that's a nice house 🔥🔥🔥",
     "bedrooms": 5,
-    "price": 750000
+    "price": 750000,
+    "email": "kamil@email.com"
   },
   {
     "city": "Warsaw",
     "street": "al. Jana Pawła II 32",
     "description": "Cool house",
     "bedrooms": 2,
-    "price": 300000
+    "price": 300000,
+    "email": "ania@email.com"
   }
 ]

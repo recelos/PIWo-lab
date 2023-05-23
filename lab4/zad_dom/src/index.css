@@ -61,8 +61,11 @@ html{
   column-gap: 1rem;
   text-decoration: none;
   list-style-type: none;
+  text-align: center;
 }
-
+.menu p{
+  display: inline-block;
+}
 .menu-item{
   color: var(--copy-green);
   font-size: var(--small-font-size);
