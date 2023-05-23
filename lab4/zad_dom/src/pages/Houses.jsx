@@ -28,15 +28,15 @@ export default function Houses(props){
 
       <div className="query-container">
         <div className="query">
-          <label for="houses-filter">Filter by city</label>
+          <label htmlFor="houses-filter">Filter by city</label>
           <input type="text" name="houses-filter" value={ cityQuery } onChange={ e => { setCityQuery(e.target.value) } }/>
         </div>
         <div className="query">
-          <label for="bedrooms-filter">Filter by number of bedrooms</label>
+          <label htmlFor="bedrooms-filter">Filter by number of bedrooms</label>
           <input type="text" name="bedrooms-filter" value={ bedroomsQuery } onChange={ e => { setBedroomsQuery(e.target.value) } }/>
         </div>
         <div className="query">
-          <label for="description-filter">Filter by description</label>
+          <label htmlFor="description-filter">Filter by description</label>
           <input type="text" name="description-filter" value={ descritpionQuery } onChange={ e => { setDescritpionQuery(e.target.value) } }/>
         </div>
       </div>

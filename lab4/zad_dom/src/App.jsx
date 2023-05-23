@@ -3,12 +3,21 @@ import About from './pages/About';
 import Main from './pages/Main';
 import Houses from './pages/Houses';
 import Add from './pages/Add';
-import realEstates from './data/realEstates';
+import axios from 'axios';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function App() {
-  const [houses, setHouses] = useState(realEstates);
+  const [houses, setHouses] = useState([]);
+
+  useEffect(() => {
+    axios
+    .get('./data/realEstates.json')
+    .then(response => {
+      let data = response.data;
+      setHouses(data);
+    });
+  },[]);
 
   const addHouse = (city, price, street, description, bedrooms) =>{
     const newHouse = {
@@ -28,8 +37,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={ <Main /> } />
           <Route path="/about" element={ <About /> } />
-          <Route path="/houses" element={ <Houses houses={ houses }/> } />
-          <Route path="/add" element={ <Add addHouse = {addHouse} /> } />
+          <Route path="/houses" element={ <Houses houses = { houses }/> } />
+          <Route path="/add" element={ <Add addHouse = { addHouse } /> } />
         </Routes>
       </BrowserRouter>
     </div>
