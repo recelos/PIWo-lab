@@ -20,7 +20,7 @@ export default function Navbar() {
           {
             user && 
             <>
-              <p>logged in as {user.displayName}</p>
+              <p>logged in as {user.displayName ?? user.email}</p>
               <button className="menu-item" onClick={ () => logOut() }>Log out</button> 
             </>
           }
