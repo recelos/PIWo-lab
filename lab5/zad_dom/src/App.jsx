@@ -4,21 +4,18 @@ import Main from './pages/Main';
 import Houses from './pages/Houses';
 import Add from './pages/Add';
 import { UserProvider } from './providers/UserProvider'
-import axios from 'axios';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { addEstate, getAllEstates } from './firebase/DataService';
 
 export default function App() {
   const [houses, setHouses] = useState([]);
 
   useEffect(() => {
-    axios
-    .get('./data/realEstates.json')
-    .then(response => {
-      let data = response.data;
-      setHouses(data);
+    getAllEstates().then(estates => {
+      setHouses(estates);
     });
-  },[]);
+  }, []);
 
   const addHouse = (city, price, street, description, bedrooms) =>{
     const newHouse = {
@@ -28,7 +25,11 @@ export default function App() {
       description: description,
       bedrooms: parseInt(bedrooms)
     }
-    setHouses(oldArray => [...oldArray, newHouse]);
+    addEstate(newHouse);
+
+    getAllEstates().then(estates => {
+      setHouses(estates);
+    });
   }
 
   return(
