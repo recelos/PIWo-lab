@@ -8,9 +8,7 @@ const twitterProvider = new GithubAuthProvider();
 export const logInWithGoogle = async () => {
   try {
     const user = await signInWithPopup(auth, googleProvider);
-    console.log(user)
   } catch (error) {
-    console.error({ error });
     alert(error.message);
   }
 }
@@ -18,9 +16,7 @@ export const logInWithGoogle = async () => {
 export const logInWithGithub = async () => {
   try {
     const user = await signInWithPopup(auth, twitterProvider);
-    console.log(user)
   } catch (error) {
-    console.error({ error });
     alert(error.message);
   }
 }
