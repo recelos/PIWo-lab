@@ -1,14 +1,13 @@
 import React, { createContext, useMemo } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useUser } from '../firebase/AuthService';
 
 export const UserContext = createContext();
 
 export function UserProvider ({ children }) {
-  const [user, setUser] = useLocalStorage("loggedInUser", null);
-  const providerValue = useMemo(() => ({ user, setUser }), [user, setUser]);
+  const user= useUser();
 
   return (
-    <UserContext.Provider value={ providerValue }>
+    <UserContext.Provider value={ user }>
       { children }
     </UserContext.Provider>
   );

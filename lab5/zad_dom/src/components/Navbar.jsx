@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../providers/UserProvider";
+import { logOut } from "../firebase/AuthService";
+
 
 export default function Navbar() {
-  const { user, setUser } = useContext(UserContext);
+  const user = useContext(UserContext);
   
   return (
     <nav className="navbar">
@@ -18,8 +20,8 @@ export default function Navbar() {
           {
             user && 
             <>
-              <p>logged in as {`${user.firstName} ${user.lastName}`}</p>
-              <button className="menu-item" onClick={ () => setUser(null)}>Log out</button> 
+              <p>logged in as {user.displayName}</p>
+              <button className="menu-item" onClick={ () => logOut() }>Log out</button> 
             </>
           }
         </div>

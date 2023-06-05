@@ -1,28 +1,31 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { UserContext } from "../providers/UserProvider";
-
+import { logInWithGoogle } from "../firebase/AuthService";
 
 export default function Main() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { user, setUser } = useContext(UserContext)
+  // const { user, setUser } = useContext(UserContext)
 
-  const handleLogin = () => {
-    axios
-    .get("./data/users.json")
-    .then((response) => {
-      let users = response.data;
-      const loggedInUser = users.find((user) => user.email === email && user.password === password);
-      if (loggedInUser) {
-        setUser(loggedInUser);
-      } else {
-        alert("Błąd logowania");
-      }
-    })
-    .catch((err) => console.log(err));
-  }
+  const user = useContext(UserContext)
+
+  // const handleLogin = () => {
+  //   axios
+  //   .get("./data/users.json")
+  //   .then((response) => {
+  //     let users = response.data;
+  //     const loggedInUser = users.find((user) => user.email === email && user.password === password);
+  //     if (loggedInUser) {
+  //       setUser(loggedInUser);
+  //     } else {
+  //       alert("Błąd logowania");
+  //     }
+  //   })
+  //   .catch((err) => console.log(err));
+  // }
+
 
   return(
     <section className="hero-section">
@@ -48,7 +51,8 @@ export default function Main() {
           <a href="#">Forgot password </a>
         </div>
         
-        <button onClick={ handleLogin } className="login">Log in</button>
+        {/* <button onClick={ handleLogin } className="login">Log in</button> */}
+        <button onClick={ logInWithGoogle } className="login">Log in with Google</button>
       </div>
     </div>
 
